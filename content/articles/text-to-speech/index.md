@@ -25,9 +25,8 @@ Your setup should appear as below.
 ![Set up](/engineering-education/text-to-speech/activity.png)
 
 #### Navigating Android Studio
-At first glance, you will note that you have been presented with two tabs. The **activity_main.xml** tab where you will be able to develop and modify the templates and palettes presented to achieve the desired outlook of your application.
+The android studio by default has two tabs. The **activity_main.xml** tab where you will be able to develop and modify the templates and palettes presented to achieve the desired outlook of your application.
 The tab is further divided into three sections, code, design, and spit.
-If you accidentally close the activity_main.xml tab, you can always reopen it in the **app>res>layout>activity_main.xml**.
 
 ![Reopening .xml file](/engineering-education/text-to-speech/xml.png)
 
@@ -49,126 +48,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
-```
-To re open the MainActivity.java tab in case of accidental closure, you can find it in **app>java>com.example.texttospeech>MainActivity.java**.
-
-![Reopening .java file](/engineering-education/text-to-speech/java.png)
-
-#### Developing a satisfactory outlook of the application
-Now we will get deeper into the **.xml** file extension. This is the file that gives you the freedom to develop an application with a presentation that suits you. You can achieve that by modifying the code of the palettes or adjusting the palettes to the suitable physical appearance you desire.
-
-To help with the design of the application, let us develop an application with a simple outlook having both text to speech and speech to text on one tab as shown below.
-
-![Project Outlook](/engineering-education/text-to-speech/output.png)
-
-The code to achieve the above outlook is as follows.
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="300dp"
-        android:layout_height="56dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="178dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="48dp"
-        android:text="Text to Speech"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="168dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="52dp"
-        android:text="Click image below"
-        android:textStyle="italic|bold"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.011" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="173dp"
-        android:layout_height="172dp"
-        android:layout_marginTop="52dp"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_mic" />
-
-    <TextView
-        android:id="@+id/output1"
-        android:layout_width="313dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="36dp"
-        android:text="Output"
-        android:textSize="15dp"
-        android:textAlignment="center"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.632"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
-
-In the code, we have used a **constraint layout** since it allows us to position palettes in different places of the screen provided.
-Android studio provides other types of layouts to help position your palettes.
-
-The layouts include:
-- [Relative layout](https://developer.android.com/guide/topics/ui/layout/relative)
-- [Linear layout](https://developer.android.com/guide/topics/ui/layout/linear)
-
-As you have also noted, you can modify the palettes not only with the design editor but also by editing the code.
-Let's learn how to edit the code.
-**Note:** It is important to note that every pallet has a different `id` since it will be used in the Main Activity to create different object cases and to program them to carry out tasks differently. An example is shown below.
-
-```xml
-android:id="@+id/button"
-```
-
-To adjust the `width` and `height` of the pallets, do this on the design editor to get the scale that fits the pallets with the device.
-
-**Important Note** - Remember to attach the palette to the edges of the design editor on all four sides to avoid self-realigning the palettes. You can do it as shown below.
-
-![Aligning Paletts](/engineering-education/text-to-speech/edge.png)
-
-You can make the texts in the Textview more appealing by changing the text style, color, or size. Make the text style both italic and bold and suitable text size depending on your design editor or target device.
-```xml
-android:textStyle="italic|bold"
 ```
 
 #### Programming the palettes in Java
